@@ -14,6 +14,25 @@
     padding: 15px 60px
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25)
 
+    &__button
+        display: none
+        border: none
+        outline: none
+        background: transparent
+        width: 40px
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+        > span
+            display: block
+            height: 2px
+            width: 40px
+            background-color: #C72728
+
+            &:nth-child(2)
+                margin: 5px 0
+
     &__links
         text-transform: uppercase
         font-size: 14px
@@ -45,16 +64,16 @@
     &__logo
         > img
             width: 213px
-            height: 52px
+            min-height: 52px
 
     &__links
-        height: 52px
+        min-height: 52px
         display: flex
         flex-direction: row
         align-items: center
 
         >a
-            height: 52px
+            min-height: 52px
             margin-right: 3px
             background-color: #C72728
             display: flex
@@ -62,8 +81,8 @@
             justify-content: center
             color: #fff
             text-transform: uppercase
-            padding: 0 9px
-            min-width: 250px
+            text-overflow: ellipsis
+            padding: 0 20px
     &__info
         font-size: 14px
         text-transform: uppercase
@@ -75,3 +94,34 @@
 
         > div > span
             color: #C72728
+
+
+    
+
+@media (max-width: 910px)
+    .menu
+        &__button
+            display: flex
+
+    .nav
+        width: 100%
+        &__links
+            width: 100%
+            display: flex
+            justify-content: space-between
+            padding: 0 20px
+            > a 
+                display: none
+        
+        &__info
+            display: none
+
+        &__logo
+            display: block !important
+
+            > img
+                width: 190px
+
+@media (max-width: 610px)
+    .menu
+        display: none
